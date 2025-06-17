@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parasyte Registration</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="veins"></div>
+    <div class="parasyte-form">
+        <div class="tentacle"></div>
+        <div class="tentacle"></div>
+        <div class="tentacle"></div>
+    </div>
+    
+    <div class="container">
+        <div class="form-container">
+            <h1>Register</h1>
+            <p class="subtitle">Join the symbiotic evolution... become one with us</p>
+            
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="female" name="gender" value="female" required>
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="other" name="gender" value="other" required>
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Course/Program</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select your program</option>
+                        <option value="BS in Parasitology and Host Defense Systems">BS in Parasitology and Host Defense Systems</option>
+                        <option value="BS in Neurobiology and Behavioral Sciences">BS in Neurobiology and Behavioral Sciences</option>
+                        <option value="BS in Synthetic Biology Bioengineering">BS in Synthetic Biology Bioengineering </option>
+                        <option value="BS in Molecular Microbiology and Genomics">BS in Molecular Microbiology and Genomics</option>
+                        <option value="BS in Environmental Parasitology and Ecology">BS in Environmental Parasitology and Ecology</option>
+                        <option value="BS in Biochemical and Molecular Toxicology">BS in Biochemical and Molecular Toxicology</option>
+                        <option value="BS in Computational Biology and Artificial Life">BS in Computational Biology and Artificial Life</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I accept the symbiotic bond and agree to the evolution process</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="register-btn">Begin Transformation</button>
+            </form>
+
+            <div class="login-link">
+                Already transformed? <a href="#">Access your form here</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert" class="alert">
+        Registration Successful! The Synthetic evolution begins... 
+    </div>
+
+    <!-- Welcome Message -->
+    <div id="welcomeMessage" class="welcome-overlay">
+        <div class="welcome-content">
+            <div class="parasyte-eye"></div>
+            <h1 class="welcome-title">You're Enrolled!</h1>
+            <p class="welcome-subtitle">Welcome to Parasyte World</p>
+            <div class="welcome-text">
+                <p>The symbiotic bond has been established...</p>
+                <p>Your transformation is now complete.</p>
+                <p>Prepare for a new existence.</p>
+            </div>
+            <button id="enterWorld" class="enter-btn">Enter the World</button>
+        </div>
+    </div>
+
+    <!-- Receipt Modal -->
+    <div id="receiptModal" class="modal">
+        <div class="modal-content">
+            <div class="receipt-header">
+                <h2> Transformation Record</h2>
+                <p>Welcome to Sr.sinichi Club</p>
+            </div>
+            <div class="receipt-body">
+                <div class="receipt-item">
+                    <span class="label">Subject Name:</span>
+                    <span class="value" id="receiptName">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span class="label">Email Address:</span>
+                    <span class="value" id="receiptEmail">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span class="label">Access Code:</span>
+                    <span class="value" id="receiptPassword">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span class="label">Phone Number:</span>
+                    <span class="value" id="receiptPhone">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span class="label">Gender:</span>
+                    <span class="value" id="receiptGender">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span class="label">Date of Birth:</span>
+                    <span class="value" id="receiptDob">-</span>
+                </div>
+                <div class="receipt-item">
+                    <span class="label">Course/Program:</span>
+                    <span class="value" id="receiptCourse">-</span>
+                </div>
+            </div>
+            <div class="receipt-footer">
+                <p>Evolution completed on <span id="receiptDate"></span></p>
+                <button id="closeReceipt" class="close-btn">Accept It</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const userData = {};
+            
+            for (let [key, value] of formData.entries()) {
+                userData[key] = value;
+            }
+            
+            // Show success alert first
+            const alert = document.getElementById('alert');
+            alert.classList.add('show');
+            
+            // Hide alert after 2 seconds and show receipt
+            setTimeout(() => {
+                alert.classList.remove('show');
+                showReceipt(userData);
+            }, 2000);
+            
+            // Log user data to console (for demonstration)
+            console.log('Subject Registration Data:', userData);
+        });
+
+        function showReceipt(userData) {
+            // Populate receipt with user data
+            document.getElementById('receiptName').textContent = userData.fullName || '-';
+            document.getElementById('receiptEmail').textContent = userData.email || '-';
+            document.getElementById('receiptPassword').textContent = userData.password || '-';
+            document.getElementById('receiptPhone').textContent = userData.phone || '-';
+            document.getElementById('receiptGender').textContent = userData.gender ? userData.gender.charAt(0).toUpperCase() + userData.gender.slice(1) : '-';
+            document.getElementById('receiptDob').textContent = userData.dob ? formatDate(userData.dob) : '-';
+            document.getElementById('receiptCourse').textContent = userData.course ? formatCourse(userData.course) : '-';
+            document.getElementById('receiptDate').textContent = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            // Show modal
+            const modal = document.getElementById('receiptModal');
+            modal.classList.add('show');
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        function formatCourse(courseValue) {
+            return courseValue;
+        }
+
+        // Close receipt modal
+        document.getElementById('closeReceipt').addEventListener('click', function() {
+            const modal = document.getElementById('receiptModal');
+            modal.classList.remove('show');
+            
+            // Show welcome message after a short delay
+            setTimeout(() => {
+                showWelcomeMessage();
+            }, 500);
+            
+            // Reset form
+            document.getElementById('registrationForm').reset();
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('receiptModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('show');
+                document.getElementById('registrationForm').reset();
+            }
+        });
+
+        // Add subtle morphing animation to form
+        const formContainer = document.querySelector('.form-container');
+        let morphDirection = 1;
+        
+        setInterval(() => {
+            const currentTransform = formContainer.style.transform || 'translateY(0px)';
+            const currentY = parseFloat(currentTransform.replace(/[^-\d.]/g, '')) || 0;
+            
+            if (currentY >= 3) morphDirection = -1;
+            if (currentY <= -3) morphDirection = 1;
+            
+            formContainer.style.transform = `translateY(${currentY + (morphDirection * 0.2)}px)`;
+        }, 150);
+
+        // Show welcome message function
+        function showWelcomeMessage() {
+            const welcomeOverlay = document.getElementById('welcomeMessage');
+            welcomeOverlay.classList.add('show');
+        }
+
+        // Enter world button functionality
+        document.getElementById('enterWorld').addEventListener('click', function() {
+            const welcomeOverlay = document.getElementById('welcomeMessage');
+            welcomeOverlay.style.animation = 'welcomeFadeIn 0.5s ease-out reverse';
+            
+            setTimeout(() => {
+                welcomeOverlay.classList.remove('show');
+                welcomeOverlay.style.animation = '';
+                
+                // You can add redirect or other functionality here
+                console.log('Welcome to Parasyte World! 🧬');
+            }, 500);
+        });
+
+        
+    </script>
+</body>
+</html>

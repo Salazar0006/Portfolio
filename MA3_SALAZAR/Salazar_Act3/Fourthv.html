@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Title</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("spotifybg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .container {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 700px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+    }
+
+    a {
+      text-decoration: none;
+      color: #07de3d;
+    }
+
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    .description {
+      margin-top: 20px;
+    }
+
+    .rating {
+      margin-top: 10px;
+      font-size: 24px;
+    }
+
+    .star {
+      cursor: pointer;
+      color: #777;
+      transition: color 0.2s;
+    }
+
+    .star.selected {
+      color: #00ff40;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Lilly of Valley</h1>
+    <p><strong> by: Daniel</strong>
+    <a href="homepage.html">Return to homepage</a>
+
+    <iframe 
+    src="https://www.youtube.com/embed/vIARWPkdHeg" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
+
+    </iframe>
+
+    <div class="description">
+      <h3>Description</h3>
+      <p>
+        "Lily of the Valley" is a song by Korean artist Daniel, released in 2020. The track gained significant attention after being featured in the soundtrack of the Korean drama Melancholia in 2021. ​</p>
+        <p>
+        The song's lyrics convey a message of eternal love and deep appreciation for moments spent with a partner. It uses the metaphor of a flower to symbolize tenderness and beauty in a relationship. ​</p>
+
+      <div class="rating">
+        <strong>Rating:</strong><br>
+        <span class="star" onclick="rateStar(1)">&#9733;</span>
+        <span class="star" onclick="rateStar(2)">&#9733;</span>
+        <span class="star" onclick="rateStar(3)">&#9733;</span>
+        <span class="star" onclick="rateStar(4)">&#9733;</span>
+        <span class="star" onclick="rateStar(5)">&#9733;</span>
+      </div>
+   
+
+  <script>
+    function rateStar(rating) {
+      const stars = document.querySelectorAll('.star');
+      stars.forEach((star, index) => {
+        if (index < rating) {
+          star.classList.add('selected');
+        } else {
+          star.classList.remove('selected');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

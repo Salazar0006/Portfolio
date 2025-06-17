@@ -1,0 +1,81 @@
+body {
+  font-family: 'Tahoma';
+  background-color: #121212;
+  background: url("street.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #f9f6f6;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  background-color: rgba(71, 73, 71, 0.8);
+  border-radius: 12px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-with-image {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.section-with-image.image-left {
+  flex-direction: row;
+}
+
+.section-with-image.image-right {
+  flex-direction: row-reverse;
+}
+
+.section-with-image .text {
+  flex: 2;
+  background-color: rgba(71, 73, 71, 0.8);
+  border-radius: 12px;
+  border: 1px solid #fbf6f6;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-with-image .text:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section-with-image .image {
+  flex: 1;
+  text-align: center;
+}
+
+.section-with-image .image img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+}

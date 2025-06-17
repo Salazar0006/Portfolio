@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Title</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("spotifybg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .container {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 700px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+    }
+
+    a {
+      text-decoration: none;
+      color: #07de3d;
+    }
+
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      margin-top: 20px;
+    }
+
+    .description {
+      margin-top: 20px;
+    }
+
+    .rating {
+      margin-top: 10px;
+      font-size: 24px;
+    }
+
+    .star {
+      cursor: pointer;
+      color: #777;
+      transition: color 0.2s;
+    }
+
+    .star.selected {
+      color: #00ff40;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Ikot</h1>
+    <p><strong> by: Over October</p></strong>
+    <a href="homepage.html">Return to homepage</a>
+
+    <iframe 
+      src="https://www.youtube.com/embed/LkUlV1Ct6w0" 
+      title="YouTube video player" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+
+    <div class="description">
+      <h3>Description</h3>
+      <p>
+        "Ikot" is a song that delves into the complexities of unspoken emotions and the internal struggle of harboring feelings for someone without the courage to confess. The lyrics depict a cycle of contemplation and hesitation, where the protagonist repeatedly finds themselves circling around their emotions, unable to break free from the loop of longing and uncertainty. The recurring theme of running in circles symbolizes this ongoing internal conflict and the difficulty of expressing true feelings. ​
+        Lyrics Translations</p>
+        <p>
+        Musically, "Ikot" complements its introspective lyrics with a melody that captures the essence of wistful yearning. The arrangement builds gradually, mirroring the protagonist's escalating emotions, while the harmonious blend of instruments underscores the song's reflective mood. This musical progression enhances the storytelling, allowing listeners to connect deeply with the sentiment of being trapped in a cycle of unexpressed affection.
+      </p>
+
+      <div class="rating">
+        <strong>Rating:</strong><br>
+        <span class="star" onclick="rateStar(1)">&#9733;</span>
+        <span class="star" onclick="rateStar(2)">&#9733;</span>
+        <span class="star" onclick="rateStar(3)">&#9733;</span>
+        <span class="star" onclick="rateStar(4)">&#9733;</span>
+        <span class="star" onclick="rateStar(5)">&#9733;</span>
+      </div>
+
+  <script>
+    function rateStar(rating) {
+      const stars = document.querySelectorAll('.star');
+      stars.forEach((star, index) => {
+        if (index < rating) {
+          star.classList.add('selected');
+        } else {
+          star.classList.remove('selected');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
